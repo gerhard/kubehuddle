@@ -1,0 +1,28 @@
+# https://argoproj.github.io/argo-cd/operator-manual/ingress/#traefik-v22
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: argocd-server
+  namespace: default
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      # TODO: template
+      match: Host(`argocd.kubehuddle.gerhard.io`)
+      priority: 10
+      services:
+        - name: argocd-server
+          port: 80
+    - kind: Rule
+      # TODO: template
+      match: Host(`argocd.kubehuddle.gerhard.io`) && Headers(`Content-Type`, `application/grpc`)
+      priority: 11
+      services:
+        - name: argocd-server
+          port: 80
+          scheme: h2c
+  tls:
+    certResolver: default

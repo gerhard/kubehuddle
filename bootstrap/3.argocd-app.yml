@@ -1,0 +1,18 @@
+# https://argoproj.github.io/argo-cd/operator-manual/application.yaml
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app
+  namespace: default
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/gerhard/kubehuddle.git
+    targetRevision: main
+    path: app/yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated: {}

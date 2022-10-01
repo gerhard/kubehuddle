@@ -1,0 +1,42 @@
+name: "Dagger"
+
+on:
+  push:
+    branches: [ main ]
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
+    paths:
+      - "app"
+  # Enable manual trigger for easier debugging
+  # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onworkflow_dispatchinputs
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        # https://github.com/actions/checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Build
+        # https://github.com/dagger/dagger-for-github
+        uses: dagger/dagger-for-github@v3
+        with:
+          # https://github.com/dagger/dagger/releases
+          version: v0.2.35
+          cmds: |
+            do app
+        env:
+          DAGGER_LOG_FORMAT: plain
+          CIVO_API_KEY: ${{ secrets.CIVO_API_KEY }}
+          REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
+
+      - name: Commit
+        # https://github.com/stefanzweifel/git-auto-commit-action
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Save new app image reference"
+          file_pattern: "app/yaml/deployment.yaml"

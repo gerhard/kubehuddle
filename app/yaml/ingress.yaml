@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: app
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    # TODO: template
+    - match: Host(`app.kubehuddle.gerhard.io`)
+      kind: Rule
+      services:
+        - name: app
+          port: 8080
