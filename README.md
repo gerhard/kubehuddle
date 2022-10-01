@@ -38,4 +38,4 @@ I learned this from someone else, and also... Join me if you are curious to see 
 - [ ] Check that code works on a clean workstation (`hannibal`)
 - [ ] Link to slides
 - [ ] Link to video
-- [ ] Tag `2022`
+- [ ] Tag `2022` & update links in README.md
