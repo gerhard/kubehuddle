@@ -32,7 +32,8 @@ I learned this from someone else, and also... Join me if you are curious to see 
 ## Checklist
 
 - [x] Extract code in this standalone repository
-- [x] Check that GitHub workflow works
+- [x] Check that GitHub Actions workflow works
+- [x] Check that GitHub Actions workflow auto-triggers
 - [x] Make `kubehuddle` package (container) public
 - [x] Link this repository to `kubehuddle` package
 - [ ] Check that code works on a clean workstation 💻 `hannibal`

@@ -5,7 +5,7 @@ on:
     branches: [ main ]
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
     paths:
-      - "app"
+      - 'app/**'
   # Enable manual trigger for easier debugging
   # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onworkflow_dispatchinputs
   workflow_dispatch:
@@ -38,5 +38,5 @@ jobs:
         # https://github.com/stefanzweifel/git-auto-commit-action
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Save new app image reference"
-          file_pattern: "app/yaml/deployment.yaml"
+          commit_message: 'Save new app image reference'
+          file_pattern: 'app/yaml/deployment.yaml'
