@@ -7,7 +7,7 @@ You will find:
 - K8s app manifests used by ArgoCD to automatically keep the app in sync: [app/yaml](app/yaml)
 - GitHub Action that uses Dagger.io to build, publish the app image & auto-commits: [.github/workflows/dagger.yml](.github/workflows/dagger.yml)
 - 💡 App image uses `cosign` verification: [kubehuddle.cue#L110-L128](kubehuddle.cue#L110-L128)
-- GitHub Action workflow runs: [Dagger](actions/workflows/dagger.yml)
+- GitHub Action workflow runs: [Dagger](https://github.com/gerhard/kubehuddle/actions/workflows/dagger.yml)
 - ArgoCD config that auto-deploys when the repository updates: [bootstrap/3.argocd-app.yml](bootstrap/3.argocd-app.yml)
 
 Slides are publicly available: [🗂 TBA](#)
