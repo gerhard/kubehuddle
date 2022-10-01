@@ -31,10 +31,10 @@ I learned this from someone else, and also... Join me if you are curious to see 
 ## Checklist
 
 - [x] Extract code in this standalone repository
-- [ ] Check that GitHub workflow works
-- [ ] Make `kubehuddle` package (container) public
-- [ ] Link this repository to `kubehuddle` package
-- [ ] Double-check that code works on clean workstation (i.e. `hannibal`)
+- [x] Check that GitHub workflow works
+- [x] Make `kubehuddle` package (container) public
+- [x] Link this repository to `kubehuddle` package
+- [ ] Check that code works on a clean workstation (`hannibal`)
 - [ ] Link to slides
 - [ ] Link to video
 - [ ] Tag `2022`
