@@ -36,8 +36,8 @@ I learned this from someone else, and also... Join me if you are curious to see 
 - [x] Check that GitHub Actions workflow auto-triggers
 - [x] Make `kubehuddle` package (container) public
 - [x] Link this repository to `kubehuddle` package
-- [ ] Check that code works on a clean workstation 💻 `hannibal`
-- [ ] Record backup asciinemas... just in case
+- [x] Check that code works on a clean workstation 💻 `hannibal`
+- [x] Record backup asciinemas... just in case
 - [ ] Link to slides
 - [ ] Link to video
 - [ ] Tag `2022` & update links in README.md
