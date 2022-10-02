@@ -1,16 +1,18 @@
-This repository has all the code used for [You're holding it wrong](https://kubehuddle.com/2022/#speaker-gerhard-lazu), my KubeHuddle talk - Oct. 3, 2022.
+This repository has all the code used for [You are holding it wrong](https://kubehuddle.com/2022/#speaker-gerhard-lazu), my KubeHuddle talk - Oct. 3, 2022.
 
 You will find:
 - Dagger.io v0.2.x pipeline config: [kubehuddle.cue](kubehuddle.cue)
 - Dagger.io v0.2.x code to manage a Civo.com K8s cluster: [civo/k8s.cue](civo/k8s.cue)
+- Dagger.io v0.3.x GraphQL query examples to show a Civo.com K8S cluster: [civo/k8s.graphql](civo/k8s.graphql)
 - K8s manifests used for bootstraping a newly created Civo.com K8s cluster: [bootstrap](bootstrap)
 - K8s app manifests used by ArgoCD to automatically keep the app in sync: [app/yaml](app/yaml)
 - GitHub Action that uses Dagger.io to build, publish the app image & auto-commits: [.github/workflows/dagger.yml](.github/workflows/dagger.yml)
 - 💡 App image uses `cosign` verification: [kubehuddle.cue#L110-L128](kubehuddle.cue#L110-L128)
 - GitHub Action workflow runs: [Dagger](https://github.com/gerhard/kubehuddle/actions/workflows/dagger.yml)
 - ArgoCD config that auto-deploys when the repository updates: [bootstrap/3.argocd-app.yml](bootstrap/3.argocd-app.yml)
+- [Asciinema](https://asciinema.org/docs/usage) recordings for various commands, e.g. `dagger do k8s`: [asciinema](asciinema)
 
-Slides are publicly available: [🗂 TBA](#)
+[🗂 Slides are publicly available](https://gerhard.io/slides/holding-it-wrong).
 
 The talk has been recorded Oct. 3, 2022 and can be watched here: [🎬 TBA](#)
 
@@ -38,6 +40,6 @@ I learned this from someone else, and also... Join me if you are curious to see 
 - [x] Link this repository to `kubehuddle` package
 - [x] Check that code works on a clean workstation 💻 `hannibal`
 - [x] Record backup asciinemas... just in case
-- [ ] Link to slides
+- [x] Link to slides
 - [ ] Link to video
 - [ ] Tag `2022` & update links in README.md
