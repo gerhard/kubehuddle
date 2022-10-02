@@ -1,0 +1,20 @@
+query civo_k8s {
+  core {
+    image(ref: "nixery.dev/civo") {
+      exec(
+        input: {args: ["civo", "apikey", "save", "--load-from-env"], secretEnv: {name: "CIVO_API_KEY", id: "ff72f14bc9027998551808b449837b5bcdc4175c5590368585491ba9fa81806f"}}
+      ) {
+        fs {
+          list: exec(input: {args: ["civo", "k8s", "ls"]}) {
+            stdout
+          }
+        }
+        fs {
+          show: exec(input: {args: ["civo", "k8s", "show", "kubehuddle"]}) {
+            stdout
+          }
+        }
+      }
+    }
+  }
+}
