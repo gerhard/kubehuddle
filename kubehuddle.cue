@@ -108,6 +108,7 @@ dagger.#Plan & {
 		// Create app
 		app: {
 			// https://github.com/chainguard-images/nginx
+			// https://rekor.tlog.dev/?hash=sha256:bae2f500050d450b1d3f309bc357c1b61830607f86d5c60249e3665fa433da7f
 			_appBaseImage: "cgr.dev/chainguard/nginx:1.22@sha256:bae2f500050d450b1d3f309bc357c1b61830607f86d5c60249e3665fa433da7f"
 			verify:        docker.#Build & {
 				steps: [
